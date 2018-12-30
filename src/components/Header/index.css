@@ -1,0 +1,30 @@
+.linkActive {
+  color: white !important;
+  border-bottom: 0.2rem solid white !important;
+}
+
+.linkNormal {
+  color: #eff3f6 !important;
+}
+
+.navbar-brand {
+  color: #eff3f6 !important;
+}
+
+.navbar-toggler {
+  background: white !important;
+}
+
+/* file size: 5.3ko | already optimized | base64 size: 7.1ko */
+.logo {
+    /*background-image: url(data:image/svg+xml;base64,)*/
+}
+
+.app-logo {
+    display: inline-block;
+    /*background-color: rgba(255, 255, 255, 1);*/
+
+    /*color: black;*/
+    height: 17.5px;
+    width: 150px;
+}

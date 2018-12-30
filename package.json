@@ -1,0 +1,30 @@
+{
+  "name": "touch_frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^5.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && npm run build-rename && npm run build-replace-js && npm run build-replace-css && npm run build-gz",
+    "build-rename": "npm run build-rename-js && npm run build-rename-css",
+    "build-rename-js": "renamer --find '/main\\.[^\\.]+\\.js/' --replace 'main.js' build/static/js/*.js",
+    "build-rename-css": "renamer --find '/main\\.[^\\.]+\\.css/' --replace 'main.css' build/static/css/*.css",
+    "build-replace-js": "replace 'main\\.([a-f0-9]+)\\.js' 'main.js\"' build/index.html",
+    "build-replace-css": "replace 'main\\.([a-f0-9]+)\\.css' 'main.css\"' build/index.html",
+    "build-gz": "gzipme -o build/index.html && gzipme -o build/static/js/main.js && gzipme -o build/static/css/main.css && gzipme -o build/favicon.ico",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gzipme": "^0.1.1",
+    "renamer": "^1.0.0",
+    "replace": "^0.3.0"
+  }
+}
